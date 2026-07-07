@@ -1,17 +1,19 @@
 $kind: http-request
 name: Atualizar Ninja
 method: PUT
-url: '{{baseUrl}}/ninjas/atualizar/1'
+url: "{{baseUrl}}/ninjas/atualizar/7"
 order: 5000
 headers:
-  - key: Content-Type
-    value: application/json
+  Content-Type: application/json
 body:
   type: json
   content: |-
     {
-      "nome": "Naruto Uzumaki",
-      "email": "naruto@konoha.com",
-      "idade": 18,
-      "rank": "Chunin"
+      "nome": "Kakashi Hatake",
+      "email": "kakashi@konoha.com",
+      "idade": 27,
+      "rank": "Jonin",
+      "missoes": {
+        "id": 5
+      }
     }

@@ -1,15 +1,14 @@
 $kind: http-request
-name: 'Criar Missão'
+name: Criar Missão
 method: POST
-url: '{{baseUrl}}/missoes/criar'
+url: "{{baseUrl}}/missoes/criar"
 order: 2000
 headers:
-  - key: Content-Type
-    value: application/json
+  Content-Type: application/json
 body:
   type: json
   content: |-
     {
-      "nomeMissao": "Recuperar o Pergaminho",
-      "dificuldade": "D"
+      "nomeMissao": "",
+      "dificuldade": "S"
     }
