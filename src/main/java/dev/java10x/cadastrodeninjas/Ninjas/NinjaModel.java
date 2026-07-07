@@ -1,12 +1,9 @@
 package dev.java10x.cadastrodeninjas.Ninjas;
+
 import dev.java10x.cadastrodeninjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-
-//@Entity transforma uma Classe em uma Entidade do BD
-//Spring Data JPA = Java Persistence API
 @Entity
 @Table(name = "tb_cadastro")
 @Data
