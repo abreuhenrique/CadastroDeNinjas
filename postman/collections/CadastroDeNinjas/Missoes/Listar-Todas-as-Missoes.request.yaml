@@ -1,0 +1,5 @@
+$kind: http-request
+name: 'Listar Todas as Missões'
+method: GET
+url: '{{baseUrl}}/missoes/listar'
+order: 1000

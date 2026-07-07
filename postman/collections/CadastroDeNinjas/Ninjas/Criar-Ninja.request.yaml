@@ -1,0 +1,17 @@
+$kind: http-request
+name: Criar Ninja
+method: POST
+url: '{{baseUrl}}/ninjas/criar'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nome": "Naruto Uzumaki",
+      "email": "naruto@konoha.com",
+      "idade": 17,
+      "rank": "Genin"
+    }

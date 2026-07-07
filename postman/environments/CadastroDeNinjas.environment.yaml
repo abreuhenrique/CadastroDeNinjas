@@ -1,0 +1,7 @@
+name: CadastroDeNinjas
+schema: 'https://schema.getpostman.com/json/collection/v2.1.0/environment.json'
+values:
+  - key: baseUrl
+    value: 'http://localhost:8080'
+    type: default
+    enabled: true

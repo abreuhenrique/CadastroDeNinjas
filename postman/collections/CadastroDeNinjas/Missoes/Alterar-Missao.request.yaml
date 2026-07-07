@@ -1,0 +1,15 @@
+$kind: http-request
+name: 'Alterar Missão'
+method: PUT
+url: '{{baseUrl}}/missoes/alterar/1'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nomeMissao": "Recuperar o Pergaminho Proibido",
+      "dificuldade": "C"
+    }

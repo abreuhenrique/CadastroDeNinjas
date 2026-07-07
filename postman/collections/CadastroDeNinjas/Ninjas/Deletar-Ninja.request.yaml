@@ -1,0 +1,5 @@
+$kind: http-request
+name: Deletar Ninja
+method: DELETE
+url: '{{baseUrl}}/ninjas/deletar/1'
+order: 6000

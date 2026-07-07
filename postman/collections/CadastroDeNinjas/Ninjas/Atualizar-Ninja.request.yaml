@@ -1,0 +1,17 @@
+$kind: http-request
+name: Atualizar Ninja
+method: PUT
+url: '{{baseUrl}}/ninjas/atualizar/1'
+order: 5000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nome": "Naruto Uzumaki",
+      "email": "naruto@konoha.com",
+      "idade": 18,
+      "rank": "Chunin"
+    }

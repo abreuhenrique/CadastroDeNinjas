@@ -1,0 +1,5 @@
+$kind: http-request
+name: 'Deletar Missão'
+method: DELETE
+url: '{{baseUrl}}/missoes/deletar/1'
+order: 4000

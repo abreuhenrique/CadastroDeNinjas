@@ -1,0 +1,5 @@
+$kind: http-request
+name: Boas Vindas
+method: GET
+url: '{{baseUrl}}/ninjas/boasvindas'
+order: 1000

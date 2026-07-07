@@ -1,0 +1,5 @@
+$kind: http-request
+name: Listar Ninja por ID
+method: GET
+url: '{{baseUrl}}/ninjas/listar/1'
+order: 3000
