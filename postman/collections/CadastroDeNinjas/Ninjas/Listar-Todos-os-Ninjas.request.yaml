@@ -1,5 +1,26 @@
 $kind: http-request
 name: Listar Todos os Ninjas
-method: GET
-url: '{{baseUrl}}/ninjas/listar'
+method: POST
+url: "{{baseUrl}}/missoes/1"
+body:
+  type: json
+  content: "{\r
+
+    \    \"id\": 1,\r
+
+    \    \"nome\": null,\r
+
+    \    \"dificuldade\": \"D\",\r
+
+    \    \"ninjas\": [\r
+
+    \        {\r
+
+    \            \"id\": 1\r
+
+    \        }\r
+
+    \    ]\r
+
+    }"
 order: 2000

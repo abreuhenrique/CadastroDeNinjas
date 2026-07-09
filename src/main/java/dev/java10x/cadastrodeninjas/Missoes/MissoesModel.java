@@ -3,19 +3,16 @@ package dev.java10x.cadastrodeninjas.Missoes;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.cadastrodeninjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_missoes")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@NoArgsConstructor
+@ToString(exclude = "ninjas")
 public class MissoesModel {
 
     @Id
@@ -23,12 +20,12 @@ public class MissoesModel {
     private Long id;
 
     @Column(name = "nomeMissao")
-    private String nomeMissao;
+    private String nome;
 
     @Column(name = "dificuldade")
     private String dificuldade;
 
     @OneToMany(mappedBy = "missoes")
     @JsonIgnore
-    private List<NinjaModel> ninja;
+    private List<NinjaModel> ninjas;
 }

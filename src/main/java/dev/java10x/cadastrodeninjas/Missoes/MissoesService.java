@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 @Service
 public class MissoesService {
 
-    MissoesRepository missoesRepository;
-    MissoesMapper missoesMapper;
+    private final MissoesRepository missoesRepository;
+    private final MissoesMapper missoesMapper;
 
     public MissoesService(MissoesRepository missoesRepository, MissoesMapper missoesMapper) {
         this.missoesRepository = missoesRepository;
@@ -24,30 +24,32 @@ public class MissoesService {
                 .collect(Collectors.toList());
     }
 
-    public MissoesDTO listarMissaoId(Long id) {
+    public MissoesDTO listarMissoesId(Long id) {
         Optional<MissoesModel> missao = missoesRepository.findById(id);
-        return missao.map(missoesMapper::map).orElse(null);
+        return missao.map(missoesMapper::map).orElseThrow(null);
     }
 
     public MissoesDTO criarMissao(MissoesDTO missoesDTO) {
-        MissoesModel missaoCriada = missoesMapper.map(missoesDTO);
-        missaoCriada = missoesRepository.save(missaoCriada);
-        return missoesMapper.map(missaoCriada);
+        MissoesModel missao = missoesMapper.map(missoesDTO);
+        missao = missoesRepository.save(missao);
+        return missoesMapper.map(missao);
     }
 
-    public MissoesDTO alterarMissao(Long id, MissoesDTO missao) {
+    public MissoesDTO atualizarMissao(Long id, MissoesDTO missoesDTO) {
         Optional<MissoesModel> missaoExistente = missoesRepository.findById(id);
         if (missaoExistente.isPresent()) {
-            MissoesModel missaoAtualizada = missoesMapper.map(missao);
+            MissoesModel missaoAtualizada = missoesMapper.map(missoesDTO);
             missaoAtualizada.setId(id);
-            missaoAtualizada = missoesRepository.save(missaoAtualizada);
-            return missoesMapper.map(missaoAtualizada);
+            MissoesModel missaoSalva = missoesRepository.save(missaoAtualizada);
+            return missoesMapper.map(missaoSalva);
         }
         return null;
     }
 
     public void deletarMissao(Long id) {
-        missoesRepository.deleteById(id);
+        Optional<MissoesModel> missaoDeletada = missoesRepository.findById(id);
+        if (missaoDeletada.isPresent()) {
+            missoesRepository.deleteById(id);
+        }
     }
-
 }
